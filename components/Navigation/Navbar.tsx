@@ -120,7 +120,7 @@ const Navbar = () => {
               </div>
             </div>
             <Link
-              href="#"
+              href="/contact"
               className="bg-[#0B3D91] text-white flex items-center justify-center h-14 px-6 rounded-full hover:bg-[#0B3D91]/90 transition-colors"
             >
               Contact us

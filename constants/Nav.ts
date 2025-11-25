@@ -12,6 +12,7 @@ import {
   ManagedIcon3,
   ManagedIcon4,
 } from "@/components/Reusable/Images";
+import { link } from "fs";
 
 export const NAV_LINKS = [
   { name: "Home", link:'/' },
@@ -97,8 +98,8 @@ export const NAV_LINKS = [
       },
     ],
   },
-  { name: "Company" },
-  { name: "Resources" },
+  { name: "Company", link: "/company" },
+  { name: "Resources", link: "/resources" },
 ];
 
 export const Footer_LINKS = [
@@ -107,7 +108,7 @@ export const Footer_LINKS = [
     dropdown: [
       { name: "Home", link: "/" },
       { name: "Company", link: "/company" },
-      { name: "Resources", link: "/resource" },
+      { name: "Resources", link: "/resources" },
     ],
   },
   {
@@ -126,37 +127,37 @@ export const Footer_LINKS = [
         icon: Cyber2,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/grc",
         title: "Governance, Risk, Compliance & Strategies",
         desc: "Align with frameworks like ASD Essential Eight, NIST, and ISO 27001.",
         icon: Cyber3,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/cyber-maturity-assessment",
         title: "Cyber Maturity Assessments",
         desc: "Pinpoint gaps and build a clear, actionable roadmap.",
         icon: Cyber4,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/threat-intelligence",
         title: "Threat Intelligence",
         desc: "Dark web monitoring, global threat feeds, and industry-specific alerts.",
         icon: Cyber5,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/cybersecurity-consulting",
         title: "Cybersecurity Consulting",
         desc: "Tailored strategies for long-term resilience.",
         icon: Cyber6,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/cyber-awareness-training-phishing-simulation",
         title: "Cyber Awareness Training",
         desc: "Engaging, role-based learning to reduce risky behaviours.",
         icon: Cyber7,
       },
       {
-        link: "/cyber-security-projects/",
+        link: "/cyber-security-projects/email-phishing-protection",
         title: "Phishing & Email Security",
         desc: "Protect against BEC, spoofing, and malicious email threats.",
         icon: Cyber8,

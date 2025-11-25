@@ -17,7 +17,7 @@ const Hero = () => {
   const images: HTMLImageElement[] = [];
 
   const getFrame = (i: number) =>
-    `/seq/vesenex/${String(i + 1).padStart(1, "1")}.webp`;
+    `/seq/iceberg/${String(i + 1).padStart(4, "0")}.webp`;
 
   const seq = { frame: 0 };
 
@@ -138,7 +138,7 @@ const Hero = () => {
         className="absolute z-0 text-center text-white
         xl:text-[64px] lg:text-[60px] md:text-[40px] text-[30px]
         font-medium leading-[121%]
-        left-1/2 top-[25%] -translate-x-1/2  w-full"
+        left-1/2 top-[20%] -translate-x-1/2  w-full"
         style={{ opacity: 0, visibility: "hidden" }}
       >
         <div className="text-primary">Engineering Resilient Security</div>

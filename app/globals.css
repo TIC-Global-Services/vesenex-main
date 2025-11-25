@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #ffffff;
+  --foreground: #00000;
   --font-grift: var(--font-grift), sans-serif;
 }
 
@@ -13,12 +13,7 @@
   --font-grift: var(--font-grift);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   background: var(--background);
