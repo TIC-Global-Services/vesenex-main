@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,9 +12,13 @@ const Hero = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const firstTextRef = useRef<HTMLDivElement | null>(null);
   const secondTextRef = useRef<HTMLDivElement | null>(null);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isReady, setIsReady] = useState(false);
 
   const totalFrames = 150;
-  const images: HTMLImageElement[] = [];
 
   const getFrame = (i: number) =>
     `/seq/iceberg/${String(i + 1).padStart(4, "0")}.webp`;
@@ -32,15 +36,41 @@ const Hero = () => {
     canvas.width = 1920;
     canvas.height = 1080;
 
-    // Preload images
-    for (let i = 0; i < totalFrames; i++) {
-      const img = new Image();
-      img.src = getFrame(i);
-      images.push(img);
-    }
+    let loadedCount = 0;
+    const images: HTMLImageElement[] = [];
+    imagesRef.current = images;
+
+    // Preload ALL images with progress tracking
+    const preloadPromises = Array.from({ length: totalFrames }, (_, i) => {
+      return new Promise<void>((resolve, reject) => {
+        const img = new Image();
+
+        img.onload = () => {
+          loadedCount++;
+          setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
+          resolve();
+        };
+
+        img.onerror = () => {
+          console.error(`Failed to load frame ${i + 1}`);
+          loadedCount++;
+          setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
+          resolve(); // Continue even if one image fails
+        };
+
+        img.src = getFrame(i);
+        images[i] = img;
+      });
+    });
+
+    // Wait for ALL images to load
+    Promise.all(preloadPromises).then(() => {
+      setIsReady(true);
+      initializeAnimation();
+    });
 
     const render = () => {
-      const img = images[seq.frame];
+      const img = imagesRef.current[seq.frame];
       if (!img || !img.complete) return;
 
       const canvas = canvasRef.current;
@@ -62,8 +92,14 @@ const Hero = () => {
       context.drawImage(img, 0, 0, iw, ih, x, y, iw * scale, ih * scale);
     };
 
-    // Wait for first image then run GSAP
-    images[0].onload = () => {
+    const initializeAnimation = () => {
+      // Kill any existing ScrollTriggers
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+
+      // Render first frame immediately
       render();
 
       // Reset text visibility
@@ -75,11 +111,32 @@ const Hero = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=2500",
+          end: "+=2160", // This controls how long the pin lasts
           scrub: 1,
           pin: true,
+          pinSpacing: true, // This ensures space is added for the pinned element
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          refreshPriority: 2,
+          id: "hero-section", // Add ID for debugging
+          onUpdate: (self) => {
+            // Optional: log progress for debugging
+            // console.log("Hero scroll progress:", self.progress);
+          },
+          onLeave: () => {
+            // Ensure final frame is rendered when leaving
+            seq.frame = totalFrames - 1;
+            render();
+          },
+          onEnterBack: () => {
+            // Reset to first frame when scrolling back up
+            seq.frame = 0;
+            render();
+          },
         },
       });
+
+      scrollTriggerRef.current = tl.scrollTrigger as ScrollTrigger;
 
       // FRAME-BY-FRAME CANVAS ANIMATION
       tl.to(seq, {
@@ -99,7 +156,7 @@ const Hero = () => {
           duration: 0.5,
           ease: "power2.inOut",
         },
-        0.25 // starts early
+        0.25
       );
 
       tl.to(
@@ -110,13 +167,20 @@ const Hero = () => {
           duration: 0.6,
           ease: "power2.out",
         },
-        ">-0.2" // overlap slight
+        ">-0.2"
       );
+
+      // Refresh ScrollTrigger after setup
+      ScrollTrigger.refresh();
     };
 
     // Cleanup
     return () => {
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
       ScrollTrigger.getAll().forEach((st) => st.kill());
+      imagesRef.current = [];
     };
   }, []);
 
@@ -125,6 +189,24 @@ const Hero = () => {
       ref={sectionRef}
       className="w-full h-screen relative overflow-hidden"
     >
+      {/* Loading indicator */}
+      {!isReady && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black">
+          <div className="text-center">
+            <div className="text-white text-2xl font-medium mb-4">
+              Loading Experience
+            </div>
+            <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-white transition-all duration-300"
+                style={{ width: `${loadingProgress}%` }}
+              />
+            </div>
+            <div className="text-white text-sm mt-2">{loadingProgress}%</div>
+          </div>
+        </div>
+      )}
+
       <canvas
         ref={canvasRef}
         width={1920}
@@ -138,7 +220,7 @@ const Hero = () => {
         className="absolute z-0 text-center text-white
         xl:text-[64px] lg:text-[60px] md:text-[40px] text-[30px]
         font-medium leading-[121%]
-        left-1/2 top-[20%] -translate-x-1/2  w-full"
+        left-1/2 top-[20%] -translate-x-1/2 w-full"
         style={{ opacity: 0, visibility: "hidden" }}
       >
         <div className="text-primary">Engineering Resilient Security</div>

@@ -1,7 +1,10 @@
 "use client";
 import Layout from "@/layout/Layout";
 import React from "react";
-import { companyLogoFooter, LinkedinLogo } from "../Reusable/Images";
+import {
+  companyLogoFooter,
+  LinkedinLogo,
+} from "../Reusable/Images";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer_LINKS } from "@/constants/Nav";
@@ -10,32 +13,24 @@ import { motion, Variants } from "framer-motion";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.08,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const columnVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <Layout className="py-4">
-      {/* Outer gradient border container */}
+    <Layout className="py-10">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -44,154 +39,184 @@ const Footer = () => {
         className="rounded-[16px] p-[1px] relative"
         style={{
           background:
-            "linear-gradient(263.26deg, #706F6F 6.51%, #D6D3D3 59.17%, #706F6F 100%)",
+            "linear-gradient(263deg, #706F6F 6%, #D6D3D3 59%, #706F6F 100%)",
         }}
       >
-        {/* layer blur gradient - optimized */}
+        {/* Glow Effect */}
         <motion.div
-          animate={{
-            opacity: [0.4, 0.6, 0.4]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] z-[9999] pointer-events-none will-change-opacity"
+          animate={{ opacity: [0.4, 0.6, 0.4] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(50% 50% at 50% 50%, #324EEF 0%, #15121D 100%)",
+              "radial-gradient(circle, #324EEF 0%, #15121D 100%)",
             filter: "blur(200px)",
-            WebkitFilter: "blur(200px)",
           }}
         />
+
+        {/* MAIN FOOTER CONTENT */}
         <div
-          className="flex flex-col items-center justify-start text-white py-10 h-[737px] px-5 md:px-10 gap-20  pt-20 rounded-[15px] relative z-[10000]"
+          className="
+          flex flex-col text-white 
+          pt-10 px-5 md:px-10 gap-14 
+          rounded-[15px] relative z-[10]
+          "
           style={{
             background:
-              "linear-gradient(267.69deg, #0E1325 -2.87%, #0C0C0D 134.97%)",
-            backdropFilter: "blur(66.0999984741211px)",
-            WebkitBackdropFilter: "blur(66.0999984741211px)",
+              "linear-gradient(268deg, #0E1325 -3%, #0C0C0D 135%)",
+            backdropFilter: "blur(66px)",
           }}
         >
+          {/* GRID COLUMNS */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-row items-start justify-between  w-full  gap-8"
+            className="
+              grid 
+              grid-cols-1 
+              sm:grid-cols-2 
+              md:grid-cols-3 
+              lg:grid-cols-5 
+              gap-10 w-full
+            "
           >
             {/* Quick Links */}
-            <motion.div variants={columnVariants} className="flex flex-col gap-3 flex-shrink-0">
-              <h1 className="text-[20px] font-medium mb-2 whitespace-nowrap">
+            <motion.div variants={columnVariants}>
+              <h1 className="text-[18px] font-medium mb-3">
                 {Footer_LINKS[0].name}
               </h1>
-              {Footer_LINKS[0].dropdown.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="text-[#D0D5DDB2] hover:text-white hover:translate-x-1 transition-all duration-200 text-[16px] whitespace-nowrap inline-block"
-                >
-                  {"name" in item ? item.name : item.title}
-                </Link>
-              ))}
+              <div className="flex flex-col gap-2">
+                {Footer_LINKS[0].dropdown.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="text-[#D0D5DDB2] hover:text-white transition-all duration-200 text-[15px]"
+                  >
+                    {"name" in item ? item.name : item.title}
+                  </Link>
+                ))}
+              </div>
             </motion.div>
 
-            {/* Cyber Security Projects */}
-            <motion.div variants={columnVariants} className="flex flex-col gap-3 max-w-[280px] flex-shrink-0">
-              <h1 className="text-[20px] font-medium mb-2 break-words">
+            {/* Security Projects */}
+            <motion.div variants={columnVariants}>
+              <h1 className="text-[18px] font-medium mb-3">
                 {Footer_LINKS[1].name}
               </h1>
-              {Footer_LINKS[1].dropdown.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="text-[#D0D5DDB2] hover:text-white hover:translate-x-1 transition-all duration-200 text-[16px] break-words inline-block"
-                >
-                  {"title" in item ? item.title : item.name}
-                </Link>
-              ))}
+              <div className="flex flex-col gap-2">
+                {Footer_LINKS[1].dropdown.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="text-[#D0D5DDB2] hover:text-white transition-all duration-200 text-[15px]"
+                  >
+                    {"title" in item ? item.title : item.name}
+                  </Link>
+                ))}
+              </div>
             </motion.div>
 
             {/* Managed Protection */}
-            <motion.div variants={columnVariants} className="flex flex-col gap-3 max-w-[280px] flex-shrink-0">
-              <h1 className="text-[20px] font-medium mb-2 break-words">
+            <motion.div variants={columnVariants}>
+              <h1 className="text-[18px] font-medium mb-3">
                 {Footer_LINKS[2].name}
               </h1>
-              {Footer_LINKS[2].dropdown.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="text-[#D0D5DDB2] hover:text-white hover:translate-x-1 transition-all duration-200 text-[16px] break-words inline-block"
-                >
-                  {"title" in item ? item.title : item.name}
-                </Link>
-              ))}
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div variants={columnVariants} className="flex flex-col gap-5 space-y-5 flex-shrink-0 min-w-[250px]">
-              <div>
-                <h1 className="text-[20px] font-medium break-words">
-                  Sales & Support Enquiries
-                </h1>
-                <p className="text-[#D0D5DDB2] hover:text-white transition-colors duration-200 break-all cursor-pointer">
-                  business@vesenex.com
-                </p>
-              </div>
-              <div>
-                <h1 className="text-[20px] font-medium whitespace-nowrap">
-                  Our Office Address
-                </h1>
-                <p className="text-[#D0D5DDB2] text-[16px] font-light max-w-[200px] break-words leading-relaxed">
-                  Suite 329 98-100 Elizabeth St Melbourne VIC 3000 Australia.
-                </p>
+              <div className="flex flex-col gap-2">
+                {Footer_LINKS[2].dropdown.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="text-[#D0D5DDB2] hover:text-white transition-all duration-200 text-[15px]"
+                  >
+                    {"title" in item ? item.title : item.name}
+                  </Link>
+                ))}
               </div>
             </motion.div>
 
-            {/* Social Media */}
-            <motion.div variants={columnVariants} className="flex-shrink-0">
+            {/* Contact Info */}
+            <motion.div variants={columnVariants}>
+              <h1 className="text-[18px] font-medium mb-3">
+                Sales & Support Enquiries
+              </h1>
+              <p className="text-[#D0D5DDB2] hover:text-white transition-all cursor-pointer break-all">
+                business@vesenex.com
+              </p>
+
+              <h1 className="text-[18px] font-medium mt-6 mb-3">
+                Our Office
+              </h1>
+              <p className="text-[#D0D5DDB2] text-[15px] leading-relaxed">
+                Suite 329 98-100 Elizabeth St<br />
+                Melbourne VIC 3000<br />
+                Australia
+              </p>
+            </motion.div>
+
+            {/* Social */}
+            <motion.div variants={columnVariants}>
+              <h1 className="text-[18px] font-medium mb-3">Connect</h1>
               <Image
                 src={LinkedinLogo}
-                alt="Linkedin Vesenex"
-                className="w-14 cursor-pointer hover:scale-105 hover:rotate-6 transition-transform duration-300"
+                alt="LinkedIn"
+                width={50}
+                height={50}
+                className="cursor-pointer hover:scale-105 hover:rotate-6 transition-transform"
               />
             </motion.div>
           </motion.div>
 
+          {/* BOTTOM ROW */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="w-full"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col gap-6 w-full"
           >
-            <div className="flex flex-row justify-between items-center text-[#ACABB2] w-full font-light ">
-              <h1>Copyright {currentYear} - Vesenex</h1>
-              <h1>
-                Design & Developed By{" "}
+            {/* COPYRIGHT + LINKS */}
+            <div
+              className="
+              flex flex-col 
+              md:flex-row 
+              justify-between 
+              items-start md:items-center 
+              gap-3 text-[#ACABB2] text-[14px]
+              "
+            >
+              <span>© {currentYear} - Vesenex</span>
+
+              <span>
+                Design & Developed by{" "}
                 <Link
                   href="https://www.theinternetcompany.one/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-white"
                 >
                   TIC
                 </Link>
-              </h1>
-              <Link href="/terms-policy" className="hover:text-white transition-colors duration-200">Terms & Policy</Link>
-              <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Guideline</Link>
+              </span>
+
+              <div className="flex gap-4">
+                <Link href="/terms-policy" className="hover:text-white">
+                  Terms & Policy
+                </Link>
+                <Link href="/privacy" className="hover:text-white">
+                  Privacy Guideline
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-4">
-              <Image
-                src={companyLogoFooter}
-                alt="Vesenex Logo"
-                className="w-full h-full"
-                width={2000}
-                height={2000}
-              />
-            </div>
+            {/* Footer Logo */}
+            <Image
+              src={companyLogoFooter}
+              alt="Vesenex"
+              width={2000}
+              height={2000}
+              className="w-full h-auto pb-4 md:pb-2"
+            />
           </motion.div>
         </div>
       </motion.div>

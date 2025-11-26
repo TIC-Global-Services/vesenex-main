@@ -91,7 +91,7 @@ const ImgSeq: React.FC<ImgSeqProps> = ({ folderPath, totalFrames }) => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "+=10",
-          end: "+=3000",
+          end: "+=2000",
           scrub: 1,
         },
       });
@@ -132,7 +132,7 @@ const ImgSeq: React.FC<ImgSeqProps> = ({ folderPath, totalFrames }) => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=3500",
+          end: "+=2500",
           scrub: 1,
           pin: true,
         },

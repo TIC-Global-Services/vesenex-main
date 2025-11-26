@@ -14,7 +14,7 @@ const Navbar = () => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const pathname = usePathname();
 
-    const isHome = pathname === "/";
+  const isHome = pathname === "/";
 
   const logoSrc = isHome ? companyLogoBlack : companyLogoWhite;
   const navbarBg = isHome ? "bg-white" : "bg-gray-900";
@@ -59,15 +59,15 @@ const Navbar = () => {
                   <div
                     key={index}
                     className="relative"
-                    onMouseEnter={() => item.dropdown && handleMouseEnter(index)}
+                    onMouseEnter={() =>
+                      item.dropdown && handleMouseEnter(index)
+                    }
                     onMouseLeave={handleMouseLeave}
                   >
                     {item.dropdown ? (
-                      <button
-                        className="text-[#6A737C] hover:text-[#C4D8FB] whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center"
-                      >
+                      <button className="text-[#6A737C] hover:text-[#C4D8FB] whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center">
                         {item.name}
-                        <FaChevronDown 
+                        <FaChevronDown
                           className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
                             activeDropdown === index ? "rotate-180" : ""
                           }`}
@@ -75,7 +75,8 @@ const Navbar = () => {
                       </button>
                     ) : (
                       <Link
-                        href={('link' in item ? item.link : '#') as string}
+                        onClick={() => setActiveDropdown(null)}
+                        href={("link" in item ? item.link : "#") as string}
                         className="text-[#6A737C] hover:text-[#C4D8FB] whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center"
                       >
                         {item.name}
@@ -86,32 +87,33 @@ const Navbar = () => {
                     {item.dropdown && activeDropdown === index && (
                       <div className="absolute top-full -left-120 pt-7 w-[60rem] z-50">
                         <div className="px-4 bg-white/10 border border-[#65656517] backdrop-blur-2xl rounded-[12px] py-4 grid grid-cols-2 gap-2">
-                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                          <Link
-                            key={dropdownIndex}
-                            href={dropdownItem.link}
-                            className="flex items-center gap-4 px-4 py-3 rounded-lg bg-[#3E3B3B80] border border-[#444350] hover:bg-[#3E3B3B] transition-all duration-200"
-                          >
-                            {/* Icon */}
-                            <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                              <img
-                                src={dropdownItem.icon.src}
-                                alt={dropdownItem.title}
-                                className="w-15 h-15 object-contain"
-                              />
-                            </div>
+                          {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                            <Link
+                              key={dropdownIndex}
+                              onClick={() => setActiveDropdown(null)}
+                              href={dropdownItem.link}
+                              className="flex items-center gap-4 px-4 py-3 rounded-lg bg-[#3E3B3B80] border border-[#444350] hover:bg-[#3E3B3B] transition-all duration-200"
+                            >
+                              {/* Icon */}
+                              <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                                <img
+                                  src={dropdownItem.icon.src}
+                                  alt={dropdownItem.title}
+                                  className="w-15 h-15 object-contain"
+                                />
+                              </div>
 
-                            {/* Text Content */}
-                            <div className="flex flex-col">
-                              <span className="text-white font-medium text-[16px]">
-                                {dropdownItem.title}
-                              </span>
-                              <p className="text-[#C5C3C3] text-[14px] leading-snug mt-1">
-                                {dropdownItem.desc}
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
+                              {/* Text Content */}
+                              <div className="flex flex-col">
+                                <span className="text-white font-medium text-[16px]">
+                                  {dropdownItem.title}
+                                </span>
+                                <p className="text-[#C5C3C3] text-[14px] leading-snug mt-1">
+                                  {dropdownItem.desc}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     )}
@@ -129,7 +131,6 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
-         
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="bg-[#232629] rounded-full p-3 sm:p-3.5 shadow-sm"
@@ -187,8 +188,10 @@ const Navbar = () => {
                       onClick={() => toggleMobileDropdown(index)}
                       className="w-full flex items-center justify-between px-4 py-3 text-[#6A737C] hover:text-[#C4D8FB] hover:bg-[#232629] rounded-lg transition-all duration-200"
                     >
-                      <span className="font-medium text-[16px]">{item.name}</span>
-                      <FaChevronDown 
+                      <span className="font-medium text-[16px]">
+                        {item.name}
+                      </span>
+                      <FaChevronDown
                         className={`w-5 h-5 transform transition-transform duration-200 ${
                           mobileDropdownOpen === index ? "rotate-180" : ""
                         }`}
@@ -210,6 +213,8 @@ const Navbar = () => {
                               <Image
                                 src={dropdownItem.icon.src}
                                 alt={dropdownItem.title}
+                                width={50}
+                                height={50}
                                 className="w-10 h-10 object-contain"
                               />
                             </div>
@@ -230,7 +235,7 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <Link
-                    href={('link' in item ? item.link : '#') as string}
+                    href={("link" in item ? item.link : "#") as string}
                     onClick={closeMobileMenu}
                     className="block px-4 py-3 text-[#6A737C] hover:text-[#C4D8FB] hover:bg-[#232629] rounded-lg transition-all duration-200 font-medium text-[16px]"
                   >

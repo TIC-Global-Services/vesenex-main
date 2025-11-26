@@ -74,7 +74,7 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
                   >
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="w-full flex items-center justify-between md:px-6 px-4 md:py-3 text-left hover:bg-gray-50 transition-colors"
+                      className="w-full flex items-center justify-between md:px-6 px-4 py-2 md:py-3 text-left hover:bg-gray-50 transition-colors"
                     >
                       <div className="flex items-center gap-3 md:gap-4 flex-1">
                         <span className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#D6D9DC] rounded-xl flex items-center justify-center text-[#374151] font-semibold text-sm md:text-base">
