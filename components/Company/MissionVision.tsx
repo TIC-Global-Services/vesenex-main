@@ -42,16 +42,16 @@ const MissionVision = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center space-y-20 py-20 px-5">
+    <div className="min-h-screen flex flex-col items-center justify-center space-y-6 py-20 px-5">
       {/* --- SECTION CONTENT --- */}
-      <div className="flex flex-col lg:flex-row items-center justify-around w-full gap-10 mv-content">
+      <div className="flex flex-col lg:flex-row items-center justify-around w-full gap-4 md:gap-10 mv-content">
         
         {/* --- LEFT TEXT --- */}
-        <div className="max-w-xl space-y-6 text-center lg:text-left">
+        <div className="max-w-xl space-y-3 md:space-y-6 text-center lg:text-left">
           <span className="px-3 py-2 rounded-md border border-gray-600">
             {content[index].badge}
           </span>
-          <h2 className="text-4xl lg:text-5xl font-bold pt-4">
+          <h2 className="text-3xl lg:text-5xl font-bold pt-4">
             {content[index].title}
           </h2>
           <p className="text-gray-600">{content[index].desc}</p>

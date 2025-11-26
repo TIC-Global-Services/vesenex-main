@@ -18,7 +18,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
     <Layout>
       <div className="w-full py-6 md:py-10 px-2 md:px-6">
         {/* First Row - Title + 2 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 md:mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mb-10">
           <h1 className="text-3xl md:text-[55px] text-[#0C0D0E] font-medium mb-10 text-start max-w-md">
             {title}
           </h1>
@@ -54,7 +54,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
         </div>
 
         {/* Second Row - 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 md:mt-0">
           {items.slice(2, 5).map((item, index) => (
             <div
               key={index}

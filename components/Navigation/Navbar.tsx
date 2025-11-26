@@ -249,7 +249,7 @@ const Navbar = () => {
           {/* Mobile Menu Footer */}
           <div className="p-6 border-t border-[#444350]">
             <Link
-              href="#"
+              href="/contact"
               onClick={closeMobileMenu}
               className="bg-[#0B3D91] text-white flex items-center justify-center h-12 w-full rounded-full hover:bg-[#0B3D91]/90 transition-colors font-medium"
             >

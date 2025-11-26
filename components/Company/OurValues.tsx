@@ -45,7 +45,7 @@ export default function OurValuesSection() {
 
                 {/* Text */}
                 <div>
-                  <h2 className="text-5xl font-medium mb-2">{v.title}</h2>
+                  <h2 className=" text-3xl md:text-5xl font-medium mb-2">{v.title}</h2>
                   <p className="text-gray-400 max-w-md">{v.desc}</p>
                 </div>
               </div>
@@ -54,9 +54,9 @@ export default function OurValuesSection() {
         </div>
       </div>
 
-      <div className=" bg-white rounded-lg pl-10 py-10 flex flex-col lg:flex-row items-center justify-between mt-20 gap-10">
-        <div className=" space-y-4 max-w-2xl">
-            <h1 className=" font-bold text-black text-5xl ">Cybersecurity That Grows With Your Business</h1>
+      <div className=" bg-white rounded-lg  md:pl-10 py-10 flex flex-col lg:flex-row items-center justify-between mt-20 gap-10">
+        <div className=" space-y-4 max-w-2xl px-4">
+            <h1 className=" font-bold text-black text-4xl md:text-5xl ">Cybersecurity That Grows With Your Business</h1>
             <p className=" text-[#ACABB2]">Cybersecurity isn’t a one-time project — it’s an ongoing partnership. If you’re ready to protect your business without slowing it down, Vesenex is here to help you make that happen.</p>
             <Link href="/contact" className=" mt-4 inline-block bg-[#0D4BB2] text-white px-6 py-3 rounded-full hover:bg-blue-700 transition ">
             Connect for More
