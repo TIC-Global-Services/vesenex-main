@@ -55,7 +55,7 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
           {/* Title Section - 30% width on desktop */}
           <motion.div className="lg:w-[40%] w-full text-center md:text-left" variants={itemVariants}>
             <h1 className="text-3xl md:text-6xl leading-[100%] font-medium text-[#232629]  md:mb-12">
-              Frequently Asked <span className="text-primary">Questions</span>
+              Frequently <br /> Asked <span className="text-primary">Questions</span>
             </h1>
           </motion.div>
 
