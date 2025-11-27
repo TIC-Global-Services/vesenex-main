@@ -224,7 +224,7 @@ const Hero = () => {
         style={{ opacity: 0, visibility: "hidden" }}
       >
         <div className="text-primary">Engineering Resilient Security</div>
-        <div className="md:mt-2 text-black">for a Safer Tomorrow</div>
+        <div className="md:-mt-3 text-black">for a Safer Tomorrow</div>
       </div>
 
       {/* SECOND TEXT */}

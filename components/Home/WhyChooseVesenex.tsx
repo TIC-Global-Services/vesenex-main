@@ -60,14 +60,14 @@ const WhyChooseVesenex = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full mt-12">
           {/* Block 1 */}
           <div className="relative flex flex-col">
-            <div className="border border-[#525960] h-52 p-6 flex flex-col justify-center relative overflow-hidden group">
+            <div className="border border-[#525960] h-52 p-6 flex flex-col justify-center relative overflow-hidden group rounded-t-lg md:rounded-tr-none md:rounded-tl-lg">
               <Image src={items[0].icon} alt="icon" width={20} height={20} className="w-12 h-12 mb-5" />
               <p className="text-[#A0A0A3] text-[20px] leading-tight relative z-10 pointer-events-none">
                 {items[0]?.desc}
               </p>
             </div>
 
-            <div className="border border-[#525960] h-52 hidden md:block">
+            <div className="border border-[#525960] h-52 hidden md:block rounded-bl-lg">
               <RadialDotPattern />
             </div>
           </div>
@@ -105,11 +105,11 @@ const WhyChooseVesenex = () => {
 
           {/* Block 4 */}
           <div className="flex flex-col">
-            <div className="border border-[#525960] h-52">
+            <div className="border border-[#525960] h-52 rounded-tr-lg">
               <RadialDotPattern />
             </div>
 
-            <div className="border border-[#525960] h-52 p-6 flex flex-col justify-center relative overflow-hidden group">
+            <div className="border border-[#525960] h-52 p-6 flex flex-col justify-center relative overflow-hidden group rounded-b-lg md:rounded-bl-none md:rounded-br-lg">
              <Image src={items[4].icon} alt="icon" width={20} height={20} className="w-12 h-12 mb-5" />
               <p className="text-[#A0A0A3] text-[20px] leading-tight relative z-10">
                 {items[4]?.desc}

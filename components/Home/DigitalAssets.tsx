@@ -191,11 +191,11 @@ const DigitalAssets = () => {
                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
                   {/* Left Section */}
                   <div className="flex-1">
-                    <Image
+                    {/* <Image
                       src={item.icon}
                       alt={item.title}
                       className="w-10 h-10 sm:w-12 sm:h-12 mb-4 sm:mb-5"
-                    />
+                    /> */}
 
                     <h3 className="text-2xl sm:text-3xl md:text-[40px] max-w-md lg:text-[48px] leading-tight font-medium text-[#0C0D0E] mb-3">
                       {item.title}

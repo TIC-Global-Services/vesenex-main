@@ -1,3 +1,4 @@
+import SVGComponent from "@/components/Home/AustralianMap";
 import CyberProtection from "@/components/Home/CyberProtection";
 import DesignedForAus from "@/components/Home/DesignedForAus";
 import DigitalAssets from "@/components/Home/DigitalAssets";

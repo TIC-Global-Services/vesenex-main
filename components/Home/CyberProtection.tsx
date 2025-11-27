@@ -40,7 +40,7 @@ const CyberProtection = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 items-center justify-center w-full py-32 text-center relative bg-white">
+    <div className="flex flex-col gap-10 md:gap-16 items-center justify-center w-full py-32 text-center relative bg-white">
       <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#0C0D0E] font-medium">
         End to End <span className="text-primary">Cyber Protection</span>
       </h1>
@@ -60,7 +60,7 @@ const CyberProtection = () => {
               key={item.id}
               className="
                 flex-shrink-0 snap-start 
-                w-[300px] sm:w-[330px]  
+                w-[300px] sm:w-[330px]
                 bg-[#101010] rounded-[30px] px-6 py-10 shadow-lg 
                 hover:shadow-xl transition-all duration-300
               "
@@ -110,35 +110,44 @@ const CyberProtection = () => {
       </div>
 
       {/* ------- DESKTOP GRID -------- */}
-      <div className="hidden lg:grid grid-cols-3 gap-8 max-w-6xl text-white">
+      <div className="hidden lg:grid grid-cols-3 gap-14 px-10 max-w-7xl text-white">
         {CyberSecurityContents.map((item) => (
           <div
             key={item.id}
             className="
-              flex flex-col items-start bg-[#101010] w-full 
-              rounded-[30px] shadow-lg hover:shadow-xl 
-              transition-all duration-300 px-6 py-10 space-y-4 
-            "
+    flex flex-col items-start justify-between bg-[#101010] 
+    w-full h-[70dvh] rounded-[30px] shadow-lg hover:shadow-xl 
+    transition-all duration-300 px-6 py-10
+  "
           >
-            <Image
-              src={item.img}
-              alt={item.title}
-              width={240}
-              height={160}
-              className="object-contain w-full h-52 rounded-md"
-              style={{
-                borderBottom: "1px solid",
-                borderImageSource:
-                  "linear-gradient(91.8deg, #131315 13.93%, #0921B0 26.14%, #324EEF 51.3%, #0921B0 66.17%, #131315 91.84%)",
-                borderImageSlice: 1,
-              }}
-            />
+            {/* IMAGE */}
+            <div className="w-full flex justify-center">
+              <Image
+                src={item.img}
+                alt={item.title}
+                width={240}
+                height={160}
+                className="object-contain rounded-md max-h-[30vh]"
+              />
+            </div>
 
-            <div className="py-3 text-start">
-              <h1 className="text-2xl font-medium text-[#EBEBED]">
+            {/* TEXT BLOCK */}
+            <div className="w-full space-y-4 pt-6 text-start">
+              {/* Gradient Divider */}
+              <div
+                className="w-full h-0.5 mb-6"
+                style={{
+                  borderBottom: "1px solid",
+                  borderImageSource:
+                    "linear-gradient(91.8deg, #131315 13.93%, #0921B0 26.14%, #324EEF 51.3%, #0921B0 66.17%, #131315 91.84%)",
+                  borderImageSlice: 1,
+                }}
+              />
+              <h1 className="text-2xl font-medium text-[#EBEBED] leading-tight">
                 {item.title}
               </h1>
-              <p className="text-[#D6D9DC] text-[16px] leading-[21px] font-light">
+
+              <p className="text-[#D6D9DC] text-[16px] leading-[22px] font-light">
                 {item.desc}
               </p>
             </div>

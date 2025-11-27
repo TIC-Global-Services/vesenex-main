@@ -79,7 +79,7 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
                       <div className="flex items-center gap-3 md:gap-4 flex-1">
                         <span className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#D6D9DC] rounded-xl flex items-center justify-center text-[#374151] font-semibold text-sm md:text-base">
                           {index + 1}
-                        </span>
+                        </span>np
                         <span className="text-base md:text-lg font-semibold text-[#0C0D0E] text-left">
                           {faq.ques}
                         </span>

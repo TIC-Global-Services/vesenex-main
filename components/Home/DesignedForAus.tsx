@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import AustraliaMap from "./AustralianMap";
 
 const DesignedForAus = () => {
   const [index, setIndex] = useState(0);
@@ -38,34 +39,16 @@ const DesignedForAus = () => {
     <section className="relative px-6 py-24 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Side – Title + Map */}
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="space-y-10"
+        <div
+         
         >
           <h1 className="text-4xl md:text-5xl font-medium leading-tight">
             Cybersecurity Designed for{" "}
             <span className="text-primary">Australian Businesses</span>
           </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-          >
-            <Image
-              src="/images/home/designed-for-aus/aus-map.png"
-              alt="Australia"
-              width={650}
-              height={450}
-              className="rounded-2xl shadow-2xl"
-              priority
-            />
-          </motion.div>
-        </motion.div>
+          <AustraliaMap />
+        </div>
 
         {/* Right Side – Conditional Carousel / Marquee */}
         <div className="relative">
@@ -116,8 +99,6 @@ const DesignedForAus = () => {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-
-           
           </div>
         </div>
       </div>

@@ -39,8 +39,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute z-[9999] w-full px-4 sm:px-6 py-3 sm:py-4">
-        <div className="flex items-center justify-between w-full">
+      <div className={`absolute z-[9999] w-full px-4 sm:px-6 py-3 sm:py-2 ${
+            isHome ? "" : "  bg-clip-padding backdrop-filter  backdrop-blur-sm  backdrop-saturate-100 backdrop-contrast-100"
+          }`}>
+        <div className="flex items-center justify-between w-full ">
           <Link href={"/"}>
             {/* Logo */}
             <Image
@@ -52,15 +54,13 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex flex-row gap-2 items-center">
-            <div
+           <div
               className={` ${
-                isHome ? "bg-white text-gray-900" : "bg-[#232629] text-white"
+                isHome ? " text-[#374151]" : " text-[#E5E7EB]"
               }  rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}
             >
               {/* Navigation Links */}
-              <div className="flex items-center space-x-4 xl:space-x-8">
+              <div className=" hidden lg:flex items-center space-x-4 xl:space-x-8">
                 {NAV_LINKS.map((item, index) => (
                   <div
                     key={index}
@@ -71,7 +71,7 @@ const Navbar = () => {
                     onMouseLeave={handleMouseLeave}
                   >
                     {item.dropdown ? (
-                      <button className="text-[#6A737C] hover:text-primary whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center">
+                      <button className={` ${isHome ? "hover:text-primary": "hover:text-[#4D8BF2]" } whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}>
                         {item.name}
                         <FaChevronDown
                           className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
@@ -83,7 +83,7 @@ const Navbar = () => {
                       <Link
                         onClick={() => setActiveDropdown(null)}
                         href={("link" in item ? item.link : "#") as string}
-                        className="text-[#6A737C] hover:text-primary whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center"
+                        className={` ${isHome ? "hover:text-primary": "hover:text-[#4D8BF2]" }  whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}
                       >
                         {item.name}
                       </Link>
@@ -128,10 +128,18 @@ const Navbar = () => {
 
                               {/* Text Content */}
                               <div className="flex flex-col">
-                                <span className={`${isHome ? 'text-black' : 'text-white' }  font-semibold text-[16px] tracking-wide`}>
+                                <span
+                                  className={`${
+                                    isHome ? "text-black" : "text-white"
+                                  }  font-semibold text-[16px] tracking-wide`}
+                                >
                                   {dropdownItem.title}
                                 </span>
-                                <p className={`${isHome ? 'text-black/80' : 'text-white/80' } text-[14px] leading-snug mt-1`}>
+                                <p
+                                  className={`${
+                                    isHome ? "text-black/80" : "text-white/80"
+                                  } text-[14px] leading-snug mt-1`}
+                                >
                                   {dropdownItem.desc}
                                 </p>
                               </div>
@@ -144,14 +152,14 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
+
+
             <Link
               href="/contact"
-              className="bg-[#0B3D91] text-white flex items-center justify-center h-14 px-6 rounded-full hover:bg-[#0B3D91]/90 transition-colors"
+              className="bg-[#0B3D91] text-white hidden lg:flex items-center justify-center h-12 px-6 rounded-full hover:bg-[#0B3D91]/90 transition-colors"
             >
               Contact us
             </Link>
-          </div>
-
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <button

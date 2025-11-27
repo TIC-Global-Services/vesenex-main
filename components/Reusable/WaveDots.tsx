@@ -172,7 +172,7 @@ export default function RadialDotPattern() {
   };
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-black">
+    <div className="h-full w-full flex items-center justify-center bg-black rounded-lg">
       <div
         ref={containerRef}
         className="w-full h-full relative"

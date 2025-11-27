@@ -6,16 +6,16 @@ const BookAssessment = () => {
   return (
     <Layout>
       <div
-        className="flex items-center justify-end bg-cover w-full rounded-[21px] "
+        className="flex items-center justify-start bg-cover w-full rounded-[21px] "
         style={{
           width: "100%",
           height: "511px",
-          backgroundImage: `url("/images/home/BookAssesment.png")`,
+          backgroundImage: `url("/images/home/BookCTA.jpg")`,
           backgroundPosition: "center",
         }}
       >
-        <div className="flex flex-col gap-5 max-w-xl  px-4">
-          <h1 className=" text-[30px] md:text-[36px] font-medium leading-[100%] bg-gradient-to-r from-[#F1F2F3] to-[#26282B] bg-clip-text text-transparent">
+        <div className="flex flex-col gap-5 max-w-3xl md:pt-10 px-6 md:px-14">
+          <h1 className=" text-[30px] md:text-[36px] font-medium leading-[100%] bg-gradient-to-r from-[#F1F2F3] to-[#B8AAF4] bg-clip-text text-transparent">
             Get a free cybersecurity assessment and see how we can protect you
             better
           </h1>
