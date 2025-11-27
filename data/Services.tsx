@@ -75,27 +75,27 @@ export const serviceData: ServiceData = {
       faq: [
         {
           ques: "What is Managed Detection and Response (MDR)?",
-          ans: "MDR is a cybersecurity service that blends advanced monitoring tools, global threat intelligence, and expert human analysis to spot and stop threats around the clock. It’s not just about having antivirus or firewalls in place; it’s about actively hunting for unusual activity and stepping in to contain issues before they disrupt your business. ",
+          ans: "Managed Detection and Response (MDR) is a cybersecurity service that combines advanced monitoring tools, global threat intelligence, and expert human analysis to identify and stop threats around the clock. It goes beyond traditional antivirus or firewalls by actively hunting for suspicious activity and containing issues before they can impact your business.",
         },
         {
           ques: "How does MDR protect my business?",
-          ans: "We keep a constant watch over your endpoints, networks, and cloud workloads. If something suspicious pops up, our security team investigates right away. If it’s confirmed as a threat, we move fast to contain it, isolating devices, blocking malicious connections, or disabling compromised accounts before the damage spreads.",
+          ans: "We continuously monitor your endpoints, networks, and cloud environments. When suspicious activity appears, our security team investigates immediately. If it's confirmed to be a threat, we act quickly—isolating affected devices, blocking malicious connections, or disabling compromised accounts to prevent further spread.",
         },
         {
           ques: "How quickly can you respond to a threat?",
-          ans: "Speed matters. In most cases, our analysts start containment within minutes of confirming a threat. Automated safeguards kick in immediately for critical incidents, while our team works on a deeper investigation and resolution",
+          ans: "Speed is critical. In most situations, our analysts begin containment within minutes of validating a threat. For high-severity incidents, automated safeguards respond instantly while our team conducts deeper investigation and remediation.",
         },
         {
           ques: "Does my company still need an in-house IT or security team if we have MDR?",
-          ans: "Yes, but MDR will take a huge load off their shoulders. We handle 24/7 monitoring, threat hunting, and incident response so your internal team can focus on keeping systems running smoothly and handling on-site fixes.",
+          ans: "Yes. MDR is designed to support your internal team—not replace them. We handle 24/7 monitoring, threat hunting, and incident response so your staff can focus on maintaining systems, supporting users, and managing on-site operations.",
         },
         {
           ques: "Is MDR compliant with Australian security standards?",
-          ans: "Absolutely. Our services are aligned with key frameworks like ASD Essential Eight, ISO 27001, and NIST. All data is handled under Australian privacy laws.",
+          ans: "Absolutely. Our MDR services are aligned with key standards such as ASD Essential Eight, ISO 27001, and NIST. All data is managed in accordance with Australian privacy laws.",
         },
         {
           ques: "How much does MDR cost?",
-          ans: "Costs depend on factors like the number of endpoints, your IT environment, and the level of coverage you need. We offer clear, predictable pricing so you can get enterprise-level protection without any surprise expenses.",
+          ans: "Costs vary depending on factors such as the number of endpoints, your IT environment, and the coverage level required. We offer clear, predictable pricing to ensure you get enterprise-grade protection without unexpected expenses.",
         },
       ],
     },
@@ -115,27 +115,27 @@ export const serviceData: ServiceData = {
         {
           name: "Centralised Log Management",
           desc: "We collect and unify security events from across your network, cloud, and endpoints, giving you a single, clear view of your entire security landscape. This means no more chasing alerts across multiple tools.",
-          img: '/images/managed-protection/Seim/1.png',
+          img: "/images/managed-protection/Seim/1.png",
         },
         {
           name: "Advanced Threat Correlation",
           desc: "Our SIEM platform uses behavioural analytics and threat intelligence feeds to connect the dots between seemingly unrelated events, spotting attacks that would otherwise slip under the radar.",
-          img: '/images/managed-protection/Seim/2.png',
+          img: "/images/managed-protection/Seim/2.png",
         },
         {
           name: "Rapid Incident Detection",
           desc: "We filter out the noise, flag real threats, and alert you with clear next steps. Our focus is on speed and accuracy, so you can act before the damage is done.",
-          img: '/images/managed-protection/Seim/3.png',
+          img: "/images/managed-protection/Seim/3.png",
         },
         {
           name: "Compliance-Ready Reporting",
           desc: "From ISO 27001 to ASD Essential Eight, our built-in reporting helps you tick compliance boxes with minimal effort while keeping auditors happy.",
-          img: '/images/managed-protection/Seim/4.png',
+          img: "/images/managed-protection/Seim/4.png",
         },
         {
           name: "Expert Oversight 24/7",
           desc: "Our Australian-based security team monitors your SIEM around the clock, ensuring nothing suspicious gets ignored — no matter when it happens.",
-          img: '/images/managed-protection/Seim/5.png',
+          img: "/images/managed-protection/Seim/5.png",
         },
       ],
       totalFrames: 200,
@@ -209,7 +209,7 @@ export const serviceData: ServiceData = {
         {
           name: "Threat Detection and Blocking",
           desc: "We spot and block malicious traffic in real time, from known malware sources to suspicious patterns that indicate an attack in progress. That means fewer risks getting anywhere near your systems.",
-          img: '/images/managed-protection/firewall/2.png',
+          img: "/images/managed-protection/firewall/2.png",
         },
         {
           name: "Policy Tailored to Your Business",
@@ -259,23 +259,23 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "Why do I need a managed firewall if I already have one installed?",
-          ans: " Having a firewall is just the first step. Threats evolve constantly, and without expert management, your firewall can become outdated or misconfigured, leaving gaps in your defences. Our managed service ensures your firewall is always optimised to block the latest threats effectively.",
+          ans: "A firewall only works well if it’s constantly updated and properly configured. Cyber threats evolve daily, so outdated rules or missed patches can leave you exposed. Managed Firewall Security ensures your firewall is always in top shape.",
         },
         {
           ques: "What threats can a managed firewall stop?",
-          ans: " A managed firewall can block a wide range of threats, including malware, ransomware, phishing attempts, DDoS attacks, and unauthorized access attempts. It filters incoming and outgoing traffic based on your customised security policies to keep harmful data out.",
+          ans: "A managed firewall can block malware, ransomware, phishing sites, suspicious IP addresses, and unauthorised access attempts. It also stops attacks that target vulnerabilities in your network before they reach your systems.",
         },
         {
           ques: "How quickly can you respond to an incident?",
-          ans: " We monitor your firewall 24/7, so if an incident is detected, our team can respond within minutes to contain the threat and minimise any potential damage.",
+          ans: "Our monitoring is real-time, and our response starts within minutes of detecting a critical issue. We work to contain the threat immediately and secure your systems.",
         },
         {
           ques: "Is a managed firewall enough to keep my business safe?",
-          ans: " A managed firewall is a critical layer of defence, but it’s most effective when combined with other security measures like endpoint protection, intrusion detection, and employee training. We recommend a multi-layered approach to cybersecurity for the best protection.",
+          ans: "It’s a strong first line of defence, but it should be part of a larger security strategy. We recommend pairing it with services like endpoint protection, threat intelligence, and ongoing security awareness training.",
         },
         {
           ques: "Do you offer reporting and compliance support?",
-          ans: " Yes, we provide regular reports on firewall activity, threats blocked, and overall security posture. Our service also helps you meet compliance requirements for standards like ASD Essential Eight, ISO 27001, and NIST.",
+          ans: "Yes. We provide clear reports on firewall activity, blocked threats, and configuration changes. These can also help with compliance for standards like ISO 27001, PCI DSS, and ASD Essential Eight.",
         },
       ],
     },
@@ -345,27 +345,27 @@ export const serviceData: ServiceData = {
       faq: [
         {
           ques: "How is this different from a regular antivirus?",
-          ans: " Traditional antivirus software mainly blocks known threats. Our endpoint security adds AI-driven behavioural detection, exploit prevention, application control, and integrated incident response, which makes it far more effective against modern attacks.",
+          ans: "Traditional antivirus software mainly blocks known threats. Our endpoint security adds AI-driven behavioural detection, exploit prevention, application control, and integrated incident response, which makes it far more effective against modern attacks.",
         },
         {
           ques: "Can you secure remote and BYOD devices?",
-          ans: " Yes, our endpoint security solutions are designed to protect devices regardless of their location, ensuring that remote workers and BYOD policies don’t create security gaps.",
+          ans: "Yes. Our security agents work on corporate and personal devices alike, ensuring they meet security policies before they connect to business resources.",
         },
         {
           ques: "Will this slow down my devices?",
-          ans: " Our agents are lightweight and optimised for performance, ensuring minimal impact on device speed and user experience.",
+          ans: "No, we use lightweight agents that run in the background without noticeable performance impact, even during active scanning.",
         },
         {
           ques: "Does it protect against ransomware?",
-          ans: " Yes, we have multiple layers of defence specifically aimed at preventing ransomware infections, including behaviour-based detection and application control.",
+          ans: "Absolutely. Our system blocks malicious file encryption activity, isolates infected devices, and supports fast rollback to a clean state if needed.",
         },
         {
           ques: "Can I see what’s happening on my endpoints in real time?",
-          ans: " Yes, our centralised console provides real-time visibility into endpoint status, threats detected, and actions taken, giving you full control over your device security.",
+          ans: "Yes. You get visibility through centralised reporting and alerts, so you always know the state of your endpoints and any actions we’ve taken.",
         },
         {
           ques: "How much does Endpoint Security cost?",
-          ans: " Pricing depends on the number of endpoints, your IT environment, and the level of coverage you need. We offer clear, predictable pricing so you can get enterprise-level protection without any surprise expenses.",
+          ans: "Pricing is based on the number of devices and the level of coverage you choose. We offer predictable pricing so you can scale easily as your workforce grows.",
         },
       ],
     },
@@ -442,19 +442,19 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "How is it different from a one-time security scan?",
-          ans: " ",
+          ans: "A one-time scan gives you a snapshot. Vulnerability Management is continuous, so you’re protected against new weaknesses as they emerge.",
         },
         {
           ques: "Will this disrupt my business operations?",
-          ans: " ",
+          ans: "No. Scans are scheduled to minimise impact, and remediation guidance is designed to work with your existing workflows.",
         },
         {
           ques: "Do you only focus on software vulnerabilities?",
-          ans: " ",
+          ans: "No, we assess hardware, network devices, operating systems, applications, and even misconfigurations that could be exploited.",
         },
         {
           ques: "Can this help with compliance?",
-          ans: " ",
+          ans: "Yes. Vulnerability Management is often a requirement for standards like ISO 27001, PCI DSS, and ASD Essential Eight, and we provide the documentation to support compliance.",
         },
       ],
     },
@@ -496,7 +496,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/penetration/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -524,31 +524,31 @@ export const serviceData: ServiceData = {
       faq: [
         {
           ques: "What is penetration testing?",
-          ans: "Penetration testing is a cybersecurity method that involves simulating a real-world attack where white-hat hackers try to exploit vulnerabilities and gaps in your systems, networks, or applications, just like an actual hacker would do. It’s done to find and fix the vulnerabilities before a real threat actor does",
+          ans: "Penetration testing is a cybersecurity method that involves simulating a real-world attack where white-hat hackers try to exploit vulnerabilities and gaps in your systems, networks, or applications, just like an actual hacker would do. It’s done to find and fix the vulnerabilities before a real threat actor does.",
         },
         {
           ques: "How is penetration testing different from vulnerability assessment?",
-          ans: " ",
+          ans: "In vulnerability assessment, automated tools are used to identify gaps, while in penetration testing, an ethical hacker actively exploits security issues to assess their real-world impact. Our ethical hackers also submit a remediation report suggesting ways to close the gaps efficiently.",
         },
         {
           ques: "What types of penetration testing do you offer?",
-          ans: " ",
+          ans: "We provide external, internal, web application, mobile app, API, wireless network, and cloud penetration testing, as well as specialised social engineering and phishing simulations.",
         },
         {
           ques: "Will testing disrupt my operations?",
-          ans: " ",
+          ans: "Our engagements are designed to be safe and minimally disruptive. We work with you to define the scope, schedule, and secure testing procedures to avoid operational impact.",
         },
         {
           ques: "How often should penetration testing be done?",
-          ans: " ",
+          ans: "You should get it done at least once a year, or whenever significant changes are made to your IT infrastructure. It’s best to do it once every 3 to 6 months, especially if you belong to high-risk industries.",
         },
         {
           ques: "Is penetration testing required for compliance?",
-          ans: " ",
+          ans: "Yes, many frameworks, including PCI DSS, ISO 27001, and APRA CPS 234, recommend or require regular penetration testing as part of a robust security program.",
         },
         {
           ques: "How much does Vesenex penetration testing cost?",
-          ans: " ",
+          ans: "Pricing depends on the scope, complexity, and duration of the engagement. We offer clear, fixed-cost proposals with no hidden charges.",
         },
       ],
     },
@@ -591,7 +591,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/governance/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -623,19 +623,19 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "Why is GRC important?",
-          ans: " ",
+          ans: "Without GRC, security can be inconsistent, reactive, and hard to measure. A good GRC approach makes your security predictable, reliable, and easier to prove to regulators or clients.",
         },
         {
           ques: "Do you only work with large organisations?",
-          ans: " ",
+          ans: "No. We tailor our GRC services to fit small, mid-sized, and large businesses. We customise our approach to meet your specific needs.",
         },
         {
           ques: "How does GRC help with compliance audits?",
-          ans: " ",
+          ans: "GRC keeps your policies, processes, and evidence organised year-round, so you’re always audit-ready instead of scrambling at the last minute.",
         },
         {
           ques: "Can you integrate GRC with existing security tools?",
-          ans: " ",
+          ans: "Yes. We work with your existing tools and processes, recommending changes only where they’ll make a measurable difference.",
         },
       ],
     },
@@ -678,7 +678,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/cyber-awarness/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -710,19 +710,19 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "How often should we do training?",
-          ans: " ",
+          ans: "Cyber awareness works best when it’s ongoing. A full program once a year is essential, but regular refreshers and phishing simulations every few months keep staff sharp and up to date.",
         },
         {
           ques: "Will it be too technical for non-IT staff?",
-          ans: " ",
+          ans: "Not at all. We explain concepts in plain language, using relatable examples instead of technical jargon.",
         },
         {
           ques: "Can you include phishing simulations?",
-          ans: " ",
+          ans: "Yes. We can run realistic phishing tests to measure progress and identify where more training is needed.",
         },
         {
           ques: "Do you train remote teams?",
-          ans: " ",
+          ans: "Absolutely. We have online training options that work just as well for distributed teams.",
         },
       ],
     },
@@ -764,7 +764,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/consulting/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -796,23 +796,23 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "Do you only work with large organisations?",
-          ans: " ",
+          ans: "No. We work with businesses of all sizes, tailoring our recommendations to your scale, complexity, and budget.",
         },
         {
           ques: "Can you help us choose security tools?",
-          ans: " ",
+          ans: "Yes. We can assess your requirements, shortlist suitable vendors, and help you implement solutions that give you the most value.",
         },
         {
           ques: "How is consulting different from managed services?",
-          ans: " ",
+          ans: "Consulting focuses on strategy, planning, and advice. Managed services like MDR handle day-to-day monitoring and response. Many clients use both for complete coverage.",
         },
         {
           ques: "Will you work with our internal IT team?",
-          ans: " ",
+          ans: "Absolutely. We collaborate closely with your existing team to make sure recommendations are realistic, achievable, and fully supported.",
         },
         {
           ques: "Is the advice product-neutral?",
-          ans: " ",
+          ans: "Yes. We’re completely independent and recommend solutions based only on your needs.",
         },
       ],
     },
@@ -854,7 +854,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/maturity-assessment/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -886,23 +886,23 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "Why should my business get one?",
-          ans: " ",
+          ans: "Without knowing your current maturity, it’s easy to over-invest in the wrong areas or overlook critical gaps. An assessment helps you prioritise your efforts and spending for maximum impact.",
         },
         {
           ques: "How is it different from a penetration test?",
-          ans: " ",
+          ans: "A penetration test looks for technical vulnerabilities in systems. A maturity assessment takes a broader view, covering strategy, governance, processes, and culture as well as technical controls.",
         },
         {
           ques: "How often should we conduct one?",
-          ans: " ",
+          ans: "We recommend every 8–12 months, or after significant changes in your business, IT environment, or regulatory landscape.",
         },
         {
           ques: "Will it help with compliance?",
-          ans: " ",
+          ans: "Yes. We can tailor the assessment to align with compliance standards relevant to your industry, helping you demonstrate adherence to regulators, auditors, and clients.",
         },
         {
           ques: "How long does it take?",
-          ans: " ",
+          ans: "Depending on the size of your organisation, most assessments take 2–4 weeks from initial scoping to final report delivery.",
         },
       ],
     },
@@ -944,7 +944,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/email-phishing/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -976,23 +976,23 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "Why is phishing such a considerable risk?",
-          ans: " ",
+          ans: "Since phishing targets people, not just systems, even the best firewalls can’t stop a user from being tricked into clicking a malicious link or giving away credentials. Phishing is also constantly evolving, making traditional defences less effective on their own.",
         },
         {
           ques: "How does Vesenex stop phishing attacks?",
-          ans: " ",
+          ans: "We use a layered approach: real-time scanning of all messages, AI-based analysis to detect suspicious patterns, domain authentication to block spoofing, and global threat feeds to identify active campaigns. If something slips through and a click happens, we respond immediately to contain the impact.",
         },
         {
           ques: "Do you protect against internal phishing or compromised accounts?",
-          ans: " ",
+          ans: "Absolutely. We monitor internal email traffic as well, which helps detect unusual sending patterns from compromised accounts and stops them before they can spread malicious messages to other staff or customers.",
         },
         {
           ques: "Is this compliant with Australian security standards?",
-          ans: " ",
+          ans: "Yes. We follow the ASD Essential Eight recommendations for email security and ensure all data handling meets Australian privacy laws.",
         },
         {
           ques: "How much does Email & Phishing Protection cost?",
-          ans: " ",
+          ans: "Pricing is based on the number of mailboxes and the level of protection required. We offer simple billing plans so you can scale protection as your team grows.",
         },
       ],
     },
@@ -1035,7 +1035,7 @@ export const serviceData: ServiceData = {
           img: "/images/cyber-security/threat/5.png",
         },
       ],
-       videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
+      videoSeq: "/seq/cyber/vulnerability/vulnerability-web.mp4",
       videoSeqMobile: "/seq/cyber/vulnerability/vulnerability-web.mp4",
 
       why: [
@@ -1067,23 +1067,27 @@ export const serviceData: ServiceData = {
         },
         {
           ques: "How does it help my business?",
-          ans: " ",
+          ans: "It gives you a clear picture of the risks you face, enabling you to strengthen defences, patch critical vulnerabilities, and make faster, better-informed security decisions.",
         },
         {
           ques: "Is this only useful for large enterprises?",
-          ans: " ",
+          ans: "Not at all. Sophisticated attackers increasingly target small and mid-sized organisations. Threat intelligence levels the playing field by providing early warning and insight typically reserved for large corporations.",
         },
         {
           ques: "What sources do you use for intelligence?",
-          ans: " ",
+          ans: "We combine open-source intelligence, commercial feeds, industry sharing groups, and proprietary research. This ensures you get a broad, accurate, and timely view of the threat landscape.",
         },
         {
           ques: "Do you provide alerts or reports?",
-          ans: " ",
+          ans: "Yes. You receive regular reports and real-time alerts when we detect threats relevant to your environment. These can be delivered in plain language summaries or technical detail, depending on your needs.",
         },
         {
           ques: "How is this different from what my antivirus or firewall already does?",
-          ans: " ",
+          ans: "Antivirus and firewalls block threats they recognise now. Threat intelligence works ahead of time, arming your defences with the latest attacker profiles and tactics so they are prepared for new and emerging threats.",
+        },
+        {
+          ques: "How much does Threat Intelligence cost?",
+          ans: "Pricing depends on the number of intelligence sources, integration points, and the level of analyst support you require. We provide flexible pricing options so you can scale coverage to your needs.",
         },
       ],
     },

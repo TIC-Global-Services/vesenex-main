@@ -52,7 +52,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex flex-row gap-2 items-center">
-            <div className="bg-[#232629] rounded-full px-6 xl:px-10 py-3 shadow-sm flex items-center space-x-4 xl:space-x-8 h-[64px]">
+            <div className={` ${isHome ? 'bg-white text-gray-900' : 'bg-[#232629] text-white'}  rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}>
               {/* Navigation Links */}
               <div className="flex items-center space-x-4 xl:space-x-8">
                 {NAV_LINKS.map((item, index) => (
@@ -65,7 +65,7 @@ const Navbar = () => {
                     onMouseLeave={handleMouseLeave}
                   >
                     {item.dropdown ? (
-                      <button className="text-[#6A737C] hover:text-[#C4D8FB] whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center">
+                      <button className="text-[#6A737C] hover:text-primary whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center">
                         {item.name}
                         <FaChevronDown
                           className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
@@ -77,7 +77,7 @@ const Navbar = () => {
                       <Link
                         onClick={() => setActiveDropdown(null)}
                         href={("link" in item ? item.link : "#") as string}
-                        className="text-[#6A737C] hover:text-[#C4D8FB] whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center"
+                        className="text-[#6A737C] hover:text-primary whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center"
                       >
                         {item.name}
                       </Link>

@@ -187,7 +187,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full h-screen relative overflow-hidden"
+      className="w-full h-screen relative overflow-hidden bg-gradient-to-b from-[#F8FAFF] to-[#8C8F95]"
     >
       {/* Loading indicator */}
       {!isReady && (
