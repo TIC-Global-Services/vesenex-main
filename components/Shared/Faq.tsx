@@ -67,14 +67,14 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
                 .map((faq, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white rounded-lg shadow-sm overflow-hidden"
+                    className=" border border-gray-300 rounded-lg  overflow-hidden"
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="w-full flex items-center justify-between md:px-6 px-4 py-2 md:py-3 text-left hover:bg-gray-50 transition-colors"
+                      className="w-full flex items-center justify-between md:px-6 px-4 py-2 md:py-3 text-left transition-colors cursor-pointer"
                     >
                       <div className="flex items-center gap-3 md:gap-4 flex-1">
                         <span className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#D6D9DC] rounded-xl flex items-center justify-center text-[#374151] font-semibold text-sm md:text-base">
