@@ -41,18 +41,24 @@ const Navbar = () => {
     <>
       <div className="absolute z-[9999] w-full px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between w-full">
-          {/* Logo */}
-          <Image
-            src={logoSrc}
-            alt="logo"
-            width={250}
-            height={80}
-            className="object-contain w-32 sm:w-40 md:w-52 lg:w-64"
-          />
+          <Link href={"/"}>
+            {/* Logo */}
+            <Image
+              src={logoSrc}
+              alt="logo"
+              width={250}
+              height={80}
+              className="object-contain w-32 sm:w-40 md:w-52 lg:w-64"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex flex-row gap-2 items-center">
-            <div className={` ${isHome ? 'bg-white text-gray-900' : 'bg-[#232629] text-white'}  rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}>
+            <div
+              className={` ${
+                isHome ? "bg-white text-gray-900" : "bg-[#232629] text-white"
+              }  rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}
+            >
               {/* Navigation Links */}
               <div className="flex items-center space-x-4 xl:space-x-8">
                 {NAV_LINKS.map((item, index) => (
@@ -86,29 +92,46 @@ const Navbar = () => {
                     {/* Dropdown Menu */}
                     {item.dropdown && activeDropdown === index && (
                       <div className="absolute top-full -left-120 pt-7 w-[60rem] z-50">
-                        <div className="px-4 bg-white/10 border border-[#65656517] backdrop-blur-2xl rounded-[12px] py-4 grid grid-cols-2 gap-2">
+                        <div
+                          className="
+      px-4 py-4 
+      rounded-2xl 
+      grid grid-cols-2 gap-3
+      bg-white/10 
+      backdrop-blur-xl 
+      border border-white/20 
+      shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+    "
+                        >
                           {item.dropdown.map((dropdownItem, dropdownIndex) => (
                             <Link
                               key={dropdownIndex}
                               onClick={() => setActiveDropdown(null)}
                               href={dropdownItem.link}
-                              className="flex items-center gap-4 px-4 py-3 rounded-lg bg-[#3E3B3B80] border border-[#444350] hover:bg-[#3E3B3B] transition-all duration-200"
+                              className="
+          flex items-center gap-4 px-4 py-3 
+          rounded-xl transition-all duration-300
+          bg-white/5 backdrop-blur-md 
+          border border-white/10 
+          hover:bg-white/10 hover:scale-[1.02]
+          shadow-[0_4px_12px_rgba(0,0,0,0.15)]
+        "
                             >
                               {/* Icon */}
                               <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
                                 <img
                                   src={dropdownItem.icon.src}
                                   alt={dropdownItem.title}
-                                  className="w-15 h-15 object-contain"
+                                  className="w-14 h-14 object-contain"
                                 />
                               </div>
 
                               {/* Text Content */}
                               <div className="flex flex-col">
-                                <span className="text-white font-medium text-[16px]">
+                                <span className={`${isHome ? 'text-black' : 'text-white' }  font-semibold text-[16px] tracking-wide`}>
                                   {dropdownItem.title}
                                 </span>
-                                <p className="text-[#C5C3C3] text-[14px] leading-snug mt-1">
+                                <p className={`${isHome ? 'text-black/80' : 'text-white/80' } text-[14px] leading-snug mt-1`}>
                                   {dropdownItem.desc}
                                 </p>
                               </div>
