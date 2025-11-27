@@ -53,14 +53,14 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
           variants={containerVariants}
         >
           {/* Title Section - 30% width on desktop */}
-          <motion.div className="lg:w-3/10 w-full" variants={itemVariants}>
-            <h1 className="text-3xl md:text-[45px] leading-[100%] font-medium text-[#232629] mb-8 md:mb-12">
+          <motion.div className="lg:w-[40%] w-full text-center md:text-left" variants={itemVariants}>
+            <h1 className="text-3xl md:text-6xl leading-[100%] font-medium text-[#232629]  md:mb-12">
               Frequently Asked <span className="text-primary">Questions</span>
             </h1>
           </motion.div>
 
           {/* FAQ Items Section - 70% width on desktop */}
-          <motion.div className="lg:w-8/10 w-full" variants={itemVariants}>
+          <motion.div className="lg:w-[60%] w-full" variants={itemVariants}>
             <div className="space-y-4">
               {items
                 .filter((faq) => faq.ques && faq.ans)
