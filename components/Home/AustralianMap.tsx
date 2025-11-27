@@ -1,30 +1,6 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function AustraliaMap() {
-  const mapRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!mapRef.current) return;
-
-    ScrollTrigger.create({
-      trigger: mapRef.current,
-      start: "top 90%", // when 80% from top → play animation
-      once: true, // play only once
-      toggleClass: {
-        targets: mapRef.current,
-        className: "visible", // adds .visible → CSS animation runs
-      },
-    });
-  }, []);
-
   return (
-    <div ref={mapRef} className="svg-animate-trigger">
+    <div>
       <svg
         width="546"
         height="445"
