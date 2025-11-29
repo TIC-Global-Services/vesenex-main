@@ -4,10 +4,10 @@ export default function AustraliaMap() {
   return (
     <div>
       <svg
-        width="546"
-        height="445"
+        width="346"
+        height="345"
         viewBox="0 0 546 445"
-        className=" bg-black"
+        className=" bg-black md:w-[500px] md:h-[500px]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
