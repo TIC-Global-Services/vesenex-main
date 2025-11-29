@@ -43,7 +43,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                  className="w-full aspect-square object-cover mb-4 select-none rounded-[8px]
                  border border-white/10 shadow-lg"
                 />
               ) : (
@@ -52,7 +52,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                  className="w-full aspect-square object-cover mb-4 select-none rounded-[8px]
                  border border-white/10 shadow-lg"
                 />
               )}
@@ -88,7 +88,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                  className="w-full aspect-square object-cover mb-4 select-none rounded-[8px]
                  border border-white/10 shadow-lg"
                 />
               ) : (
@@ -97,7 +97,7 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                  className="w-full aspect-square object-cover mb-4 select-none rounded-[8px]
                  border border-white/10 shadow-lg"
                 />
               )}
