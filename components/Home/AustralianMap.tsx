@@ -1,3 +1,5 @@
+import './MapStyle.css'
+
 export default function AustraliaMap() {
   return (
     <div>
@@ -16,7 +18,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-1"
+            className="svg-elem-1 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter1_f_1437_2117)">
@@ -26,7 +28,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-2"
+            className="svg-elem-2 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter2_f_1437_2117)">
@@ -36,7 +38,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-3"
+            className="svg-elem-3 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter3_f_1437_2117)">
@@ -46,7 +48,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-4"
+            className="svg-elem-4 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter4_f_1437_2117)">
@@ -56,7 +58,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-5"
+            className="svg-elem-5 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter5_f_1437_2117)">
@@ -66,7 +68,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-6"
+            className="svg-elem-6 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter6_f_1437_2117)">
@@ -76,7 +78,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-7"
+            className="svg-elem-7 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter7_f_1437_2117)">
@@ -86,7 +88,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-8"
+            className="svg-elem-8 path"
           ></path>
         </g>
         <g opacity="0.8" filter="url(#filter8_f_1437_2117)">
@@ -96,7 +98,7 @@ export default function AustraliaMap() {
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="svg-elem-9"
+            className="svg-elem-9 path"
           ></path>
         </g>
         <path
@@ -106,7 +108,7 @@ export default function AustraliaMap() {
           strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="svg-elem-10"
+          className="svg-elem-10 path"
         ></path>
         <path
           opacity="0.8"
@@ -115,7 +117,7 @@ export default function AustraliaMap() {
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="svg-elem-11"
+          className="svg-elem-11 path"
         ></path>
         <defs>
           <filter

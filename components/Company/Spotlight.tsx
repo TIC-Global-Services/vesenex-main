@@ -31,38 +31,7 @@ export default function SpotlightReveal() {
         end: "+=500",
         scrub: true,
         pin: true,
-      }
-    });
-
-    gsap.fromTo(".top-light", { opacity: 0, y: -80 }, {
-      opacity: 0.6,
-      y: 0,
-      duration: 1.6,
-      ease: "cubic-bezier(0.4,0,0.2,1)",
-    });
-
-    gsap.fromTo(".radial-light", { scale: 0.8, opacity: 0 }, {
-      scale: 1,
-      opacity: 0.7,
-      duration: 1.5,
-      ease: "cubic-bezier(0.4,0,0.2,1)",
-    });
-
-    gsap.to(".radial-light", {
-      opacity: 0.55,
-      scale: 1.03,
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: "cubic-bezier(0.4,0,0.2,1)",
-    });
-
-    gsap.to(".top-light", {
-      y: -10,
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: "cubic-bezier(0.4,0,0.2,1)",
+      },
     });
   }, []);
 
@@ -72,7 +41,7 @@ export default function SpotlightReveal() {
         ref={sectionRef}
         className="
           relative 
-          min-h-[120vh] 
+          min-h-dvh 
           bg-black 
           flex flex-col items-center justify-center 
           text-center 
@@ -80,46 +49,6 @@ export default function SpotlightReveal() {
           px-4 sm:px-6 md:px-8
         "
       >
-        {/* TOP HORIZONTAL LIGHT (unchanged gradient) */}
-        <div
-          className="
-            top-light absolute pointer-events-none
-            top-0 left-1/2 -translate-x-1/2
-            w-[80%] sm:w-[60%] md:w-[40%]
-            h-[60vh] sm:h-[80vh] md:h-screen
-            blur-2xl rounded-b-full
-            bg-[linear-gradient(to_bottom,rgba(80,130,255,0.9)_0%,rgba(80,130,255,0.4)_40%,rgba(0,0,0,0)_100%)]
-          "
-        ></div>
-
-        {/* BLUE CENTER GRADIENT (untouched) */}
-        <div
-          className="
-            absolute inset-0 
-            w-[80%] sm:w-[60%] md:w-1/2 mx-auto
-            opacity-0 
-            transition-opacity
-            duration-700
-            [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]
-            bg-gradient-to-b 
-            from-blue-800/40 via-blue-900/20 to-black
-          "
-        ></div>
-
-        {/* RADIAL GLOW (unchanged gradient) */}
-        <div
-          className="
-            radial-light absolute 
-            top-1/2 left-1/2 
-            -translate-x-1/2 -translate-y-[45%]
-            opacity-70
-            w-[700px] h-[700px]
-            sm:w-[900px] sm:h-[900px]
-            md:w-[1100px] md:h-[1100px]
-            bg-[radial-gradient(circle,rgba(0,102,255,0.6)_0%,rgba(0,0,0,0)_70%)]
-          "
-        ></div>
-
         {/* TEXT */}
         <div
           ref={textRef}
@@ -142,18 +71,42 @@ export default function SpotlightReveal() {
       </section>
 
       {/* SECOND SECTION */}
-      <section className="bg-black px-6 sm:px-10 md:px-16 py-20 ">
-        <div className="min-h-[60vh] max-w-xl mx-auto text-center flex flex-col items-center justify-center space-y-4">
-          <p className="text-[#ACABB2] text-sm sm:text-base">Founded by</p>
+      <section className="relative bg-black px-6 py-24 overflow-hidden md:h-screen flex flex-col items-center justify-center">
 
-          <h1 className="text-white font-bold text-[clamp(2rem,6vw,3.2rem)]">
+        <div className="relative z-10 md:min-w-5xl h-[70dvh] mx-auto text-center flex flex-col items-center justify-center">
+
+          {/* Blue corner decorations */}
+
+          {/* top-left */}
+          <div className="absolute top-10 left-10 w-20 h-20 border-l-3 border-t-3 border-blue-500"></div>
+          <div className="absolute top-14 left-14 w-16 h-16 border-l-2 border-t-2 border-blue-500"></div>
+
+          {/* top-right */}
+          <div className="absolute top-10 right-10 w-20 h-20 border-r-3 border-t-3 border-blue-500"></div>
+          <div className="absolute top-14 right-14 w-16 h-16 border-r-2 border-t-2 border-blue-500"></div>
+
+          {/* bottom-left */}
+          <div className="absolute bottom-10 left-10 w-20 h-20 border-l-3 border-b-3 border-blue-500"></div>
+          <div className="absolute bottom-14 left-14 w-16 h-16 border-l-2 border-b-2 border-blue-500"></div>
+
+          {/* bottom-right */}
+          <div className="absolute bottom-10 right-10 w-20 h-20 border-r-3 border-b-3 border-blue-500"></div>
+          <div className="absolute bottom-14 right-14 w-16 h-16 border-r-2 border-b-2 border-blue-500"></div>
+
+          <p className="text-[#ACABB2] text-sm md:text-base tracking-wider uppercase">
+            Founded by
+          </p>
+
+          <h1 className="text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-tight">
             Naveen Kumar
           </h1>
 
-          <p className="text-[#ACABB2] text-sm sm:text-base leading-relaxed">
+          <p className=" max-w-2xl mx-auto text-[#ACABB2] text-base md:text-lg leading-relaxed px-4">
             A cybersecurity specialist with a master’s in cybersecurity, Vesenex
-            is built on the belief that security must be proactive, measurable,
-            and business-aligned…
+            is driven by a core belief that security must be proactive,
+            measurable, and business-aligned. Every engagement is built for fast
+            onboarding, measurable risk reduction, and transparent reporting —
+            so you always know exactly how we’re protecting your business.
           </p>
         </div>
       </section>

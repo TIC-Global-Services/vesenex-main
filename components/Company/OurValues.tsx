@@ -24,16 +24,16 @@ export default function OurValuesSection() {
         <div className="w-full lg:w-1/2 flex flex-col justify-center gap-2">
           <h3 className="text-3xl  text-gray-300">Our Values</h3>
           <Image
-            src="/images/company/our-values.png"
+            src="/images/company/our-values-lock.png"
             alt="values illustration"
             width={600}
             height={600}
-            className="rounded-lg object-contain w-full max-w-md"
+            className="rounded-lg object-contain w-full max-w-md rotate-y-180 odd:-rotate-4 even:rotate-4"
           />
         </div>
 
         {/* RIGHT — TEXT CONTENT */}
-        <div className="w-full lg:w-1/2 space-y-10">
+        <div className="w-full lg:w-1/2 space-y-10 ">
           <div className="space-y-10">
             {values.map((v, i) => (
               <div key={i} className="flex flex-col items-start gap-4">

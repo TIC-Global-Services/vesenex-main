@@ -17,8 +17,6 @@ const Navbar = () => {
   const isHome = pathname === "/";
 
   const logoSrc = isHome ? companyLogoBlack : companyLogoWhite;
-  const navbarBg = isHome ? "bg-white" : "bg-gray-900";
-  const textColor = isHome ? "text-gray-900" : "text-white";
 
   const handleMouseEnter = (index: any) => {
     setActiveDropdown(index);
@@ -39,12 +37,17 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`absolute z-[9999] w-full px-4 sm:px-6 py-3 sm:py-2 ${
-            isHome ? "" : "  bg-clip-padding backdrop-filter  backdrop-blur-sm  backdrop-saturate-100 backdrop-contrast-100"
-          }`}>
-        <div className="flex items-center justify-between w-full ">
+      {/* TOP NAVBAR */}
+      <div
+        className={`absolute z-[9999] w-full px-4 sm:px-6 py-3 sm:py-2 ${
+          isHome
+            ? ""
+            : "bg-clip-padding backdrop-filter backdrop-blur-sm backdrop-saturate-100 backdrop-contrast-100"
+        }`}
+      >
+        <div className="flex items-center justify-between w-full">
+          {/* Logo */}
           <Link href={"/"}>
-            {/* Logo */}
             <Image
               src={logoSrc}
               alt="logo"
@@ -54,113 +57,112 @@ const Navbar = () => {
             />
           </Link>
 
-           <div
-              className={` ${
-                isHome ? " text-[#374151]" : " text-[#E5E7EB]"
-              }  rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}
-            >
-              {/* Navigation Links */}
-              <div className=" hidden lg:flex items-center space-x-4 xl:space-x-8">
-                {NAV_LINKS.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative"
-                    onMouseEnter={() =>
-                      item.dropdown && handleMouseEnter(index)
-                    }
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {item.dropdown ? (
-                      <button className={` ${isHome ? "hover:text-primary": "hover:text-[#4D8BF2]" } whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}>
-                        {item.name}
-                        <FaChevronDown
-                          className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
-                            activeDropdown === index ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    ) : (
-                      <Link
-                        onClick={() => setActiveDropdown(null)}
-                        href={("link" in item ? item.link : "#") as string}
-                        className={` ${isHome ? "hover:text-primary": "hover:text-[#4D8BF2]" }  whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}
+          {/* Desktop Navigation */}
+          <div
+            className={` rounded-full px-6 xl:px-10 py-3 flex items-center space-x-4 xl:space-x-8 h-[64px]`}
+          >
+            <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+              {NAV_LINKS.map((item, index) => (
+                <div
+                  key={index}
+                  className={` ${
+              isHome ? "text-[#374151] hover:text-primary" : "text-[#E5E7EB] hover:text-[#4D8BF2]"
+            } relative`}
+                  onMouseEnter={() => item.dropdown && handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {item.dropdown ? (
+                    <button
+                      className={` whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}
+                    >
+                      {item.name}
+                      <FaChevronDown
+                        className={`w-3 h-3 ml-1  transform transition-transform duration-200 ${
+                          activeDropdown === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  ) : (
+                    <Link
+                      onClick={() => setActiveDropdown(null)}
+                      href={("link" in item ? item.link : "#") as string}
+                      className={` whitespace-nowrap text-[14px] xl:text-[16px] font-medium transition-colors duration-200 flex items-center`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+
+                  {/* Desktop Dropdown */}
+                  {item.dropdown && activeDropdown === index && (
+                    <div className="absolute top-full -left-120 pt-7 w-[60rem] z-50">
+                      <div
+                        className="
+                          px-4 py-4 
+                          rounded-2xl 
+                          grid grid-cols-2 gap-3
+                          bg-white/10 
+                          backdrop-blur-xl 
+                          border border-white/20 
+                          shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+                        "
                       >
-                        {item.name}
-                      </Link>
-                    )}
+                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                          <Link
+                            key={dropdownIndex}
+                            onClick={() => setActiveDropdown(null)}
+                            href={dropdownItem.link}
+                            className="
+                              flex items-center gap-4 px-4 py-3 
+                              rounded-xl transition-all duration-300
+                              bg-white/5 backdrop-blur-md 
+                              border border-white/10 
+                              hover:bg-white/10 hover:scale-[1.02]
+                              shadow-[0_4px_12px_rgba(0,0,0,0.15)]
+                            "
+                          >
+                            <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                              <img
+                                src={dropdownItem.icon.src}
+                                alt={dropdownItem.title}
+                                className="w-14 h-14 object-contain"
+                              />
+                            </div>
 
-                    {/* Dropdown Menu */}
-                    {item.dropdown && activeDropdown === index && (
-                      <div className="absolute top-full -left-120 pt-7 w-[60rem] z-50">
-                        <div
-                          className="
-      px-4 py-4 
-      rounded-2xl 
-      grid grid-cols-2 gap-3
-      bg-white/10 
-      backdrop-blur-xl 
-      border border-white/20 
-      shadow-[0_8px_32px_rgba(0,0,0,0.4)]
-    "
-                        >
-                          {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                            <Link
-                              key={dropdownIndex}
-                              onClick={() => setActiveDropdown(null)}
-                              href={dropdownItem.link}
-                              className="
-          flex items-center gap-4 px-4 py-3 
-          rounded-xl transition-all duration-300
-          bg-white/5 backdrop-blur-md 
-          border border-white/10 
-          hover:bg-white/10 hover:scale-[1.02]
-          shadow-[0_4px_12px_rgba(0,0,0,0.15)]
-        "
-                            >
-                              {/* Icon */}
-                              <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                                <img
-                                  src={dropdownItem.icon.src}
-                                  alt={dropdownItem.title}
-                                  className="w-14 h-14 object-contain"
-                                />
-                              </div>
-
-                              {/* Text Content */}
-                              <div className="flex flex-col">
-                                <span
-                                  className={`${
-                                    isHome ? "text-black" : "text-white"
-                                  }  font-semibold text-[16px] tracking-wide`}
-                                >
-                                  {dropdownItem.title}
-                                </span>
-                                <p
-                                  className={`${
-                                    isHome ? "text-black/80" : "text-white/80"
-                                  } text-[14px] leading-snug mt-1`}
-                                >
-                                  {dropdownItem.desc}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
+                            <div className="flex flex-col">
+                              <span
+                                className={`${
+                                  isHome ? "text-black" : "text-white"
+                                }  font-semibold text-[16px] tracking-wide`}
+                              >
+                                {dropdownItem.title}
+                              </span>
+                              <p
+                                className={`${
+                                  isHome ? "text-black/80" : "text-white/80"
+                                } text-[14px] leading-snug mt-1`}
+                              >
+                                {dropdownItem.desc}
+                              </p>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
+          </div>
 
+          {/* Desktop Contact Button */}
+          <Link
+            href="/contact"
+            className="bg-[#0B3D91] text-white hidden lg:flex items-center justify-center h-12 px-6 rounded-full hover:bg-[#0B3D91]/90 transition-colors"
+          >
+            Contact us
+          </Link>
 
-            <Link
-              href="/contact"
-              className="bg-[#0B3D91] text-white hidden lg:flex items-center justify-center h-12 px-6 rounded-full hover:bg-[#0B3D91]/90 transition-colors"
-            >
-              Contact us
-            </Link>
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <div className="lg:hidden flex items-center gap-3">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -168,16 +170,20 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <HiX className="w-6 h-6 text-white" />
+                <HiX
+                  className={`w-6 h-6 text-[#6A737C]`}
+                />
               ) : (
-                <HiMenu className="w-6 h-6 text-white" />
+                <HiMenu
+                  className={`w-6 h-6 text-[#6A737C]`}
+                />
               )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* MOBILE OVERLAY */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-[9998] lg:hidden"
@@ -185,14 +191,14 @@ const Navbar = () => {
         />
       )}
 
-      {/* Mobile Menu Sidebar */}
+      {/* MOBILE SIDEBAR */}
       <div
         className={`fixed top-0 right-0 h-full w-[85%] sm:w-[400px] bg-[#1a1c1e] z-[9999] transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Mobile Menu Header */}
+          {/* Mobile Header */}
           <div className="flex items-center justify-between p-6 border-b border-[#444350]">
             <Image
               src={companyLogoWhite}
@@ -201,15 +207,16 @@ const Navbar = () => {
               height={50}
               className="object-contain"
             />
+
             <button
               onClick={closeMobileMenu}
               className="p-2 rounded-full hover:bg-[#232629] transition-colors"
             >
-              <HiX className="w-6 h-6 text-white" />
+              <HiX className="w-6 h-6 text-[#6A737C]" />
             </button>
           </div>
 
-          {/* Mobile Navigation Links */}
+          {/* MOBILE LINKS */}
           <nav className="flex-1 px-4 py-6 space-y-2">
             {NAV_LINKS.map((item, index) => (
               <div key={index}>
@@ -222,14 +229,15 @@ const Navbar = () => {
                       <span className="font-medium text-[16px]">
                         {item.name}
                       </span>
+
                       <FaChevronDown
-                        className={`w-5 h-5 transform transition-transform duration-200 ${
+                        className={`w-4 h-4  text-[#6A737C]
+                         transform transition-transform duration-200 ${
                           mobileDropdownOpen === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
 
-                    {/* Mobile Dropdown Items */}
                     {mobileDropdownOpen === index && (
                       <div className="mt-2 ml-4 space-y-2">
                         {item.dropdown.map((dropdownItem, dropdownIndex) => (
@@ -239,8 +247,7 @@ const Navbar = () => {
                             onClick={closeMobileMenu}
                             className="flex items-start gap-3 px-4 py-3 rounded-lg bg-[#3E3B3B80] border border-[#444350] hover:bg-[#3E3B3B] transition-all duration-200"
                           >
-                            {/* Icon */}
-                            <div className="hidden flex-shrink-0 w-10 h-10 md:flex items-center justify-center">
+                            <div className=" flex-shrink-0 w-10 h-10 md:flex items-center justify-center">
                               <Image
                                 src={dropdownItem.icon.src}
                                 alt={dropdownItem.title}
@@ -250,7 +257,6 @@ const Navbar = () => {
                               />
                             </div>
 
-                            {/* Text Content */}
                             <div className="flex flex-col">
                               <span className="text-white font-medium text-[15px]">
                                 {dropdownItem.title}
@@ -277,7 +283,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Footer */}
+          {/* Mobile Footer */}
           <div className="p-6 border-t border-[#444350]">
             <Link
               href="/contact"

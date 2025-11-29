@@ -26,7 +26,16 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
           {items.slice(0, 2).map((item, index) => (
             <div
               key={index}
-              className="rounded-[16px] shadow-md bg-[#0C0D0E] p-6 flex flex-col items-start border"
+              className="
+    rounded-[16px] 
+    p-6 
+    flex flex-col items-start 
+    border 
+    bg-white/10 
+    backdrop-blur-md 
+    border-white/20 
+    shadow-[0_8px_12px_rgba(0,0,0,0.25)]
+  "
             >
               {typeof item.img === "string" ? (
                 <Image
@@ -34,7 +43,8 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]"
+                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                 border border-white/10 shadow-lg"
                 />
               ) : (
                 <Image
@@ -42,13 +52,16 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]"
+                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                 border border-white/10 shadow-lg"
                 />
               )}
-              <h2 className="text-[28px] text-[#F1F2F3] font-medium mt-2">
+
+              <h2 className="text-[28px] text-black font-medium mt-2 ">
                 {item.name}
               </h2>
-              <p className="text-[#D6D9DC] mt-2">{item.desc}</p>
+
+              <p className="text-gray-700 mt-2 drop-shadow-sm">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -58,7 +71,16 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
           {items.slice(2, 5).map((item, index) => (
             <div
               key={index}
-              className="rounded-[16px] shadow-md bg-[#0C0D0E] p-6 flex flex-col items-start border"
+              className="
+    rounded-[16px] 
+    p-6 
+    flex flex-col items-start 
+    border 
+    bg-white/10 
+    backdrop-blur-md 
+    border-white/20 
+    shadow-[0_8px_12px_rgba(0,0,0,0.25)]
+  "
             >
               {typeof item.img === "string" ? (
                 <Image
@@ -66,7 +88,8 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]"
+                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                 border border-white/10 shadow-lg"
                 />
               ) : (
                 <Image
@@ -74,13 +97,16 @@ const GridLayout: React.FC<GridLayoutProps> = ({ title, items }) => {
                   alt={item.name}
                   width={600}
                   height={600}
-                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]"
+                  className="w-full aspect-4/3 object-cover mb-4 select-none rounded-[8px]
+                 border border-white/10 shadow-lg"
                 />
               )}
-              <h2 className="text-[28px] text-[#F1F2F3] font-medium mt-2">
+
+              <h2 className="text-[28px] text-black font-medium mt-2 ">
                 {item.name}
               </h2>
-              <p className="text-[#D6D9DC] mt-2">{item.desc}</p>
+
+              <p className="text-gray-700 mt-2 drop-shadow-sm">{item.desc}</p>
             </div>
           ))}
         </div>

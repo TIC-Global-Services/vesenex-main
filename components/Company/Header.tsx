@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className=" w-full bg-black flex items-end justify-center min-h-[60dvh]">
+    <div className=" w-full bg-black flex items-center justify-center h-screen object-cover" style={{backgroundImage: 'url("/images/company/hero-company.png")'}}>
       <div className='  max-w-4xl text-center px-6 text-white'>
         <h1 className=" text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
           Turning Complex Cyber Risks Into Simple, Actionable Security

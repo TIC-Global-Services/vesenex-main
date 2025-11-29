@@ -46,14 +46,14 @@ const Why: React.FC<WhyProps> = ({ items }) => {
               </p>
             </div>
 
-            <div className="border border-[#525960] h-[224px]">
+            <div className="border border-[#525960] h-[367px]">
               <RadialDotPattern />
             </div>
           </div>
 
           {/* Block 2 */}
-          <div className="flex flex-col mt-20">
-            <div className="border border-[#525960] h-[224px] hidden md:block">
+          <div className="flex flex-col">
+            <div className="border border-[#525960] h-[367px] hidden md:block">
               <RadialDotPattern />
             </div>
 
@@ -93,7 +93,7 @@ const Why: React.FC<WhyProps> = ({ items }) => {
 
           {/* Block 4 */}
           <div className="flex flex-col">
-            <div className="border border-[#525960] h-[224px]">
+            <div className="border border-[#525960] h-[367px]">
               <RadialDotPattern />
             </div>
 
