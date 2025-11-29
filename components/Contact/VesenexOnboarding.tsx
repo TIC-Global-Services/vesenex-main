@@ -7,12 +7,11 @@ const OnboardingSteps = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-medium text-center text-gray-900 mb-20">
-          How It Works – 4 Simple Steps
+          Vesenex 4 steps onboarding approch:
         </h2>
 
         {/* Steps */}
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
-
           {/* DOTTED CONNECTOR LINE (Desktop only) */}
           <div className="hidden md:block absolute top-8 left-1/2 -translate-x-1/2 w-[80%] border-t-2 border-dotted border-gray-300"></div>
 
@@ -87,7 +86,6 @@ const OnboardingSteps = () => {
               Deployment, monitoring, and continuous threat hunting – 24/7
             </p>
           </div>
-
         </div>
       </div>
     </section>
