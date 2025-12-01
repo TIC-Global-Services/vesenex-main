@@ -59,7 +59,6 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
             </h1>
           </motion.div>
 
-          {/* FAQ Items Section - 70% width on desktop */}
           <motion.div className="lg:w-[60%] w-full" variants={itemVariants}>
             <div className="space-y-4">
               {items
@@ -120,7 +119,7 @@ const Faq: React.FC<FaqProps> = ({ items }) => {
                             },
                           }}
                         >
-                          <div className="px-4 md:px-6 pb-4 md:pb-6 pl-[56px] md:pl-[88px]">
+                          <div className="px-4 md:px-6 pb-4 md:pb-6 pl-[68px] md:pl-[88px]">
                             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                               {faq.ans}
                             </p>
