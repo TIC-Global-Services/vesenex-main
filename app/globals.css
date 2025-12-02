@@ -35,12 +35,12 @@ body {
   border-image-slice: 1;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  /* scrollbar-width: none; Firefox */
+  /* -ms-overflow-style: none; IE and Edge */
   overflow-x: hidden;
 }
